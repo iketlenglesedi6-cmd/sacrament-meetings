@@ -1,6 +1,48 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  return <main className="mx-auto max-w-6xl px-6 py-16 sm:py-24"><section className="grid items-center gap-12 lg:grid-cols-[1.15fr_.85fr]"><div><p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-teal-700">Sunday worship, thoughtfully planned</p><h1 className="text-4xl font-bold tracking-tight text-slate-950 sm:text-6xl">Sacrament meetings, clear and ready to share.</h1><p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">A simple place for ward leaders and members to find current and past meeting programs.</p><div className="mt-8 flex flex-wrap gap-4"><Link className="rounded-lg bg-teal-700 px-5 py-3 font-semibold text-white hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" href="/meetings/current">View this Sunday&apos;s program</Link><Link className="rounded-lg border border-slate-300 px-5 py-3 font-semibold text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-700 focus:ring-offset-2" href="/meetings">Browse all meetings</Link></div></div><div className="rounded-3xl bg-amber-50 p-8 shadow-sm ring-1 ring-amber-100"><Image src="/next.svg" alt="Sacrament meeting planner mark" width={180} height={37} priority className="mb-8 h-auto w-44 opacity-70" /><blockquote className="text-2xl font-semibold leading-9 text-slate-800">“All things are done unto the edifying of the church.”</blockquote><p className="mt-4 text-sm text-slate-600">1 Corinthians 14:26</p></div></section></main>;
+  return (
+    <main className="mx-auto max-w-5xl px-6 py-14 sm:py-16">
+      <section className="border-y border-[#b7b398] py-12">
+        <div className="mb-8 flex items-center gap-3">
+          <span className="font-serif text-4xl font-bold text-[#304a2c]">✦</span>
+          <p className="text-[11px] font-black uppercase tracking-[0.28em] text-[#a26945]">
+            Cedar Ridge Ward
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-[1.6fr_.8fr] md:items-end">
+          <div>
+            <p className="mb-3 text-[11px] font-black uppercase tracking-[0.28em] text-[#a26945]">
+              Sunday Worship
+            </p>
+            <h1 className="font-serif text-5xl font-bold leading-none text-[#304a2c] sm:text-6xl">
+              Sacrament Meeting
+            </h1>
+            <p className="mt-6 max-w-2xl text-[15px] leading-7 text-[#5a6349]">
+              Current order of worship, announcements, hymns, and speakers for the ward.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link className="border border-[#304a2c] px-6 py-3 text-[11px] font-black uppercase tracking-[0.24em] text-[#304a2c]" href="/meetings/current">
+                View Current Program
+              </Link>
+              <Link className="border border-[#b7b398] px-6 py-3 text-[11px] font-black uppercase tracking-[0.24em] text-[#5a6349]" href="/meetings">
+                All Meetings
+              </Link>
+            </div>
+          </div>
+
+          <aside className="border-l-2 border-[#a26945] pl-6">
+            <p className="font-serif text-3xl font-bold leading-9 text-[#304a2c]">
+              “All things are done unto the edifying of the church.”
+            </p>
+            <p className="mt-3 text-[11px] font-black uppercase tracking-[0.22em] text-[#5a6349]">
+              1 Corinthians 14:26
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+  );
 }

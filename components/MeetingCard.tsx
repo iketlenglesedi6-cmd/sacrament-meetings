@@ -1,3 +1,33 @@
 import Link from "next/link";
 import type { SacramentMeeting } from "@/lib/types";
-export function MeetingCard({ meeting }: { meeting: SacramentMeeting }) { const date = new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).format(new Date(`${meeting.date}T12:00:00`)); return <article className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"><div className="flex items-start justify-between gap-4"><div><p className="text-sm font-semibold uppercase tracking-wider text-teal-700">{meeting.meetingType} meeting</p><h2 className="mt-1 text-xl font-bold">{date}</h2></div><Link href={`/meetings/${meeting.id}`} className="rounded-md bg-slate-900 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-700">View agenda</Link></div><p className="mt-4 text-slate-600">Conducted by {meeting.conducting}</p></article>; }
+
+export function MeetingCard({ meeting }: { meeting: SacramentMeeting }) {
+  const date = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(`${meeting.date}T12:00:00`));
+
+  return (
+    <article className="border-b border-[#b7b398] py-6">
+      <div className="flex flex-wrap items-end justify-between gap-5">
+        <div>
+          <p className="text-[11px] font-black uppercase tracking-[0.28em] text-[#a26945]">
+            {meeting.meetingType} meeting
+          </p>
+          <h2 className="mt-2 font-serif text-3xl font-bold text-[#304a2c]">{date}</h2>
+        </div>
+        <Link
+          href={`/meetings/${meeting.id}`}
+          className="text-[11px] font-black uppercase tracking-[0.24em] text-[#304a2c] underline decoration-[#a26945] hover:text-[#a26945]"
+        >
+          View agenda
+        </Link>
+      </div>
+      <p className="mt-4 text-[14px] text-[#5a6349]">
+        Conducted by <span className="font-bold text-[#304a2c]">{meeting.conducting}</span>
+      </p>
+    </article>
+  );
+}
