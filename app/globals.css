@@ -1,0 +1,7 @@
+@import "tailwindcss";
+:root { --ink: #172033; --paper: #fbfcfa; --accent: #0f766e; }
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body { background: var(--paper); color: var(--ink); font-family: var(--font-source-sans), Arial, sans-serif; }
+h1, h2, h3 { font-family: var(--font-lora), Georgia, serif; }
+@media print { header, footer, .no-print { display: none !important; } body { background: white; } }

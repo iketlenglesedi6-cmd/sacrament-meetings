@@ -1,0 +1,2 @@
+import { NavLinks } from "@/components/NavLinks";
+export function Header() { const date = new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).format(new Date()); return <header className="border-b border-slate-200 bg-white"><div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4"><div><p className="font-serif text-lg font-bold text-slate-900">Cedar Ridge Ward</p><p className="text-xs text-slate-500">{date}</p></div><NavLinks /></div></header>; }
